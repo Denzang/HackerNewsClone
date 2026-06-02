@@ -1,0 +1,143 @@
+:root {
+  --header-bg-color: #ff6600;
+  --header-text-color: #222222;
+  --content-text-color: #828282;
+  --content-bg-color: #f6f6f6ef;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 9pt;
+  color: var(--content-bg-color);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  color: var(--header-text-color);
+}
+
+.main {
+  max-width: 900px;
+  background: var(--content-bg-color);
+  margin: 10px auto;
+}
+
+header {
+  background: var(--header-bg-color);
+  color: var(--header-text-color);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0;
+}
+
+.top-left,
+.top-right,
+.header-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Adds a divider before every list item, except the very first one */
+.header-list li + li::before {
+  content: "|";
+  padding: 0 5px;
+  color: var(--header-text-color);
+}
+
+.header-list {
+  margin: 10px 0;
+}
+
+.top-left {
+  justify-content: flex-start;
+  padding-left: 10px;
+  /* gap: 20px; */
+}
+
+.top-left > p {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.top-left img {
+  padding-right: 5px;
+}
+
+.top-left a,
+.top-right a {
+  color: inherit;
+  font-weight: 600;
+  padding-left: 5px;
+  padding-right: 5px;
+  /* border-right: 2px solid var(--header-text-color); */
+}
+
+.top-right {
+  padding-right: 10px;
+}
+
+.content {
+  background: var(--content-bg-color);
+  color: var(--content-text-color);
+  padding: 10px 10px 10px 20px;
+}
+
+@media (max-width: 750px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .top-left {
+    padding: 0px 0px 0px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .top-right {
+    padding-left: 10px;
+    margin-top: 5px;
+    align-items: center;
+  }
+}
+
+/* Code Block */
+
+/* Styling for the main code block container */
+pre {
+  background-color: #1e1e1e; /* Modern dark charcoal background */
+  color: #d4d4d4; /* Light gray text for high readability */
+  padding: 14px;
+  border-radius: 6px; /* Smooth, rounded corners */
+  border: 1px solid #333333; /* Subtle border to define the block */
+  font-family: "Courier New", Courier, monospace; /* Clean monospace font */
+  font-size: 13px;
+  line-height: 1.5;
+
+  /* Crucial for Mobile: Allows horizontal scrolling if the code line is too long */
+  overflow-x: auto;
+  margin: 15px 0;
+}
+
+.inline-code {
+  background-color: #e0e0e0; /* Light gray background for contrast */
+  color: #b30000; /* Dark reddish text to stand out */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+}
